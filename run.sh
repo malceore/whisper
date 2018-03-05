@@ -1,2 +1,2 @@
-cd websocket
+cd servers
 python server.py
