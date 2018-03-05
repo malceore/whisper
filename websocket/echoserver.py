@@ -1,7 +1,7 @@
 ## @server.py
 #  This file contains the server side of the Autobahn websocket service
 
-import json, wave
+import json
 from twisted.internet import reactor
 
 from autobahn.twisted.websocket import WebSocketServerFactory, \
@@ -47,13 +47,9 @@ from autobahn.twisted.websocket import WebSocketServerFactory, \
 #  github.com/tavendo/AutobahnPython/blob/master/autobahn/autobahn/websocket/interfaces.py
 
 class StreamingServerProtocol(WebSocketServerProtocol):
-   file = wave.open("test.wav","wb")
-   file.setparams((1, 2, 16000, 76000, 'NONE', 'not compressed'))
 
    def onMessage(self, msg, binary):
-      print 'sending echo:'#, msg
-      if binary:
-          self.file.writeframes(msg)
+      print 'sending echo:', msg
       # send 'msg' back to the client (i.e. javascript)
       self.sendMessage(msg, binary)
 

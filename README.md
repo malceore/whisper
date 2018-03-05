@@ -1,6 +1,9 @@
 Whisper
 =======
 
+*Need to update this, forking Whisper inorder to combine it with my wrapper around pocketsphinx and create a self hostable Speech-to-text service for building voice activation without botnet.
+
+
 This repository contains the required submodules to stream audio from the browser to the server.
 
 ###Definition
