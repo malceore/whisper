@@ -24,9 +24,14 @@ class StreamingServerProtocol(WebSocketServerProtocol):
       elif "stop" in msg:
           print("stopping")
           self.file.close()
-          print(self.tr.sttPocketsphinx(self.filename + '.wav'))
-
-      # self.sendMessage(msg, binary)
+          # This is where we use the object to do speech to text.
+          output = self.tr.sttPocketsphinx(self.filename + '.wav')
+          print(output)
+          # Then we package it up and send it bakc down the websocket.
+          cat = ""
+          for values in output:
+              cat += " " + str(values)
+          self.sendMessage(', '+ cat)
 
 if __name__ == '__main__':
    factory = WebSocketServerFactory("ws://localhost:9001")

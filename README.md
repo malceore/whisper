@@ -3,6 +3,24 @@ Whisper
 
 *Need to update this, forking Whisper inorder to combine it with my wrapper around pocketsphinx and create a self hostable Speech-to-text service for building voice activation without botnet.
 
+In order to use this project you will need to:
+1. Install Pocketsphinx, Shinxbase and it's Python interface Library. This is a Opensource library for text to speech. To do that please follow this tutorial:
+http://www.instructables.com/id/Introduction-to-Pocketsphinx-for-Voice-Controled-A/
+
+2. You will need to install python Twisted and Autobahn. This repo includes them and instructions are found below.
+
+Here is how you run the current build:
+1. Clone and move into the directory.
+2. Make run.sh executable and run it. (Your headless server is now running.)
+3. To test it please run the webserver.py in the servers director and navigate to tests/php/test.php.
+4. Once there you can start and stop streaming audio to server. When you hit stop it should print the transcribed text in your terminal but it is also being sent back to your browser if you examine the javascript console.
+
+
+
+
+
+
+
 
 This repository contains the required submodules to stream audio from the browser to the server.
 
