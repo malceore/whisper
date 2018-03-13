@@ -61,7 +61,7 @@ class transObject:
         [words.append(seg.word) for seg in decoder.seg()]
         if decoder.hyp() != None:
             hypothesis = decoder.hyp()
-            print ('Best hypothesis: ', hypothesis.hypstr)
+            # self.dPrint('Best hypothesis: ', hypothesis.hypstr)
             words.append(hypothesis.best_score)
         else:
             words.append(0)
@@ -88,7 +88,7 @@ class transObject:
 if(__name__ == '__main__'):
     test = transObject(1)
     test.debug = True
-    print(test.sttPocketsphinx("test.wav"))
+    print(test.sttPocketsphinx("../tests/test.wav"))
     # test.start()
     # test.stop()    
     
