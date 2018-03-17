@@ -47,15 +47,14 @@ class StreamingServerProtocol(WebSocketServerProtocol):
 
 
 if __name__ == '__main__':
-   if len(sys.argv) > 1:
-       logging.basicConfig(level=logging.DEBUG)
-   else:
-       logging.basicConfig(level=logging.INFO)
-
+   logging.basicConfig(level=logging.DEBUG)
+   # logging.basicConfig(level=logging.INFO)
    factory = WebSocketServerFactory("ws://localhost:9001")
+
    logger.info("Whisper started websocket server on localhost:9001")
    factory.protocol = StreamingServerProtocol
    listenWS(factory)
+
    logger.info("Program started...")
    reactor.run()
    logger.info("Program exiting...")
