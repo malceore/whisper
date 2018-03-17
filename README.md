@@ -21,11 +21,12 @@ git clone --recursive https://github.com/cmusphinx/pocketsphinx-python/
 ```
 2. Install dependencies:
 ```
-sudo apt-get install -y python python-dev python-pip build-essential swig git libpulse-dev
+sudo apt-get install -y python python-dev python-pip build-essential swig git libpulse-dev automake autoconf libtool python-pyaudio
 ```
 3. cd into the cloned directory and then into sphinxbase/. In here you will have to make and build Sphinxbase.
 ```
 cd pocketsphinx-python/sphinxbase
+./autogen.h
 ./configure
 make
 sudo make install
@@ -33,6 +34,7 @@ sudo make install
 4. Backout one directory and go into the Pocketsphinx directory and run the same commands as above to compile and install pocketsphinx
 ```
 cd ../pocketsphinx
+./autogen.h
 ./configure
 make
 sudo make install 
