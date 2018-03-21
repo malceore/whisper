@@ -39,13 +39,17 @@ cd ../pocketsphinx
 make
 sudo make install 
 ```
-
-5. Finally you can install the pocketsphinx python library by backing out one and running setup:
+5. You will most likely need to export these variables in your .bashrc.
+```
+# Pocketsphinx
+export LD_LIBRARY_PATH=/usr/local/lib
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+```
+6. Finally you can install the pocketsphinx python library by backing out one and running setup:
 ```
 sudo python setup.py install
 ```
-
-6. You can test that it works using the example.py in the same directory. If you encounter an error please contact your system admin.
+7. You can test that it works using the example.py in the same directory. If you encounter an error please contact your system admin.
 
 
 ###How to use this Service
