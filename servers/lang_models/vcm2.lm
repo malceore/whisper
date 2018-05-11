@@ -1,0 +1,129 @@
+Language model created by QuickLM on Sat Mar 17 17:26:39 EDT 2018
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 26 sentences and 28 words
+
+\data\
+ngram 1=28
+ngram 2=52
+ngram 3=26
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-2.1931 ASSISTANT -0.2218
+-2.1931 AWAKEN -0.2218
+-2.1931 BE -0.2218
+-2.1931 CALIBRATE -0.2218
+-2.1931 EIGHT -0.2218
+-2.1931 ELEVEN -0.2218
+-2.1931 FIVE -0.2218
+-2.1931 FOUR -0.2218
+-2.1931 JEW -0.2218
+-2.1931 LIGHT -0.2218
+-2.1931 NINE -0.2218
+-2.1931 ONE -0.2218
+-2.1931 PAUSE -0.2218
+-2.1931 PLAY -0.2218
+-2.1931 RESTART -0.2218
+-2.1931 SEVEN -0.2218
+-2.1931 SHUTDOWN -0.2218
+-2.1931 SIX -0.2218
+-2.1931 SLEEP -0.2218
+-2.1931 SPEED -0.2218
+-2.1931 TEN -0.2218
+-2.1931 TEST -0.2218
+-2.1931 THREE -0.2218
+-2.1931 TOE -0.2218
+-2.1931 TWELVE -0.2218
+-2.1931 TWO -0.2218
+
+\2-grams:
+-1.7160 <s> ASSISTANT 0.0000
+-1.7160 <s> AWAKEN 0.0000
+-1.7160 <s> BE 0.0000
+-1.7160 <s> CALIBRATE 0.0000
+-1.7160 <s> EIGHT 0.0000
+-1.7160 <s> ELEVEN 0.0000
+-1.7160 <s> FIVE 0.0000
+-1.7160 <s> FOUR 0.0000
+-1.7160 <s> JEW 0.0000
+-1.7160 <s> LIGHT 0.0000
+-1.7160 <s> NINE 0.0000
+-1.7160 <s> ONE 0.0000
+-1.7160 <s> PAUSE 0.0000
+-1.7160 <s> PLAY 0.0000
+-1.7160 <s> RESTART 0.0000
+-1.7160 <s> SEVEN 0.0000
+-1.7160 <s> SHUTDOWN 0.0000
+-1.7160 <s> SIX 0.0000
+-1.7160 <s> SLEEP 0.0000
+-1.7160 <s> SPEED 0.0000
+-1.7160 <s> TEN 0.0000
+-1.7160 <s> TEST 0.0000
+-1.7160 <s> THREE 0.0000
+-1.7160 <s> TOE 0.0000
+-1.7160 <s> TWELVE 0.0000
+-1.7160 <s> TWO 0.0000
+-0.3010 ASSISTANT </s> -0.3010
+-0.3010 AWAKEN </s> -0.3010
+-0.3010 BE </s> -0.3010
+-0.3010 CALIBRATE </s> -0.3010
+-0.3010 EIGHT </s> -0.3010
+-0.3010 ELEVEN </s> -0.3010
+-0.3010 FIVE </s> -0.3010
+-0.3010 FOUR </s> -0.3010
+-0.3010 JEW </s> -0.3010
+-0.3010 LIGHT </s> -0.3010
+-0.3010 NINE </s> -0.3010
+-0.3010 ONE </s> -0.3010
+-0.3010 PAUSE </s> -0.3010
+-0.3010 PLAY </s> -0.3010
+-0.3010 RESTART </s> -0.3010
+-0.3010 SEVEN </s> -0.3010
+-0.3010 SHUTDOWN </s> -0.3010
+-0.3010 SIX </s> -0.3010
+-0.3010 SLEEP </s> -0.3010
+-0.3010 SPEED </s> -0.3010
+-0.3010 TEN </s> -0.3010
+-0.3010 TEST </s> -0.3010
+-0.3010 THREE </s> -0.3010
+-0.3010 TOE </s> -0.3010
+-0.3010 TWELVE </s> -0.3010
+-0.3010 TWO </s> -0.3010
+
+\3-grams:
+-0.3010 <s> ASSISTANT </s>
+-0.3010 <s> AWAKEN </s>
+-0.3010 <s> BE </s>
+-0.3010 <s> CALIBRATE </s>
+-0.3010 <s> EIGHT </s>
+-0.3010 <s> ELEVEN </s>
+-0.3010 <s> FIVE </s>
+-0.3010 <s> FOUR </s>
+-0.3010 <s> JEW </s>
+-0.3010 <s> LIGHT </s>
+-0.3010 <s> NINE </s>
+-0.3010 <s> ONE </s>
+-0.3010 <s> PAUSE </s>
+-0.3010 <s> PLAY </s>
+-0.3010 <s> RESTART </s>
+-0.3010 <s> SEVEN </s>
+-0.3010 <s> SHUTDOWN </s>
+-0.3010 <s> SIX </s>
+-0.3010 <s> SLEEP </s>
+-0.3010 <s> SPEED </s>
+-0.3010 <s> TEN </s>
+-0.3010 <s> TEST </s>
+-0.3010 <s> THREE </s>
+-0.3010 <s> TOE </s>
+-0.3010 <s> TWELVE </s>
+-0.3010 <s> TWO </s>
+
+\end\

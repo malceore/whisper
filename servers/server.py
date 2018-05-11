@@ -1,4 +1,4 @@
-import wave, time, logging, sys
+import wave, time, logging, sys, os
 import transcriber as trans
 from twisted.internet import reactor
 from autobahn.twisted.websocket import WebSocketServerFactory, \
@@ -44,6 +44,7 @@ class StreamingServerProtocol(WebSocketServerProtocol):
               if '<' not in str(values):
                   cat += ":" + str(values)
           self.sendMessage(''+ cat)
+          os.remove(self.filename + '.wav')
 
 
 if __name__ == '__main__':
