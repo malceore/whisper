@@ -1,5 +1,10 @@
 Whisper
 =======
+###What is Whisper?
+Whisper is a web-app acting as a thin wrapper around Pocketsphinx CMU speech-to-text. I use whisper as a microservice transcription backend for my voice activation and voice assistant projects. After installing pocketsphinx and sphinxbase and configuring the Python libraries(This is all described below). Simply supply the server.py file with your speech model(a binary trained to listen for words) and language model(provided in lang_models) and the server should start up. Once started you can open up a websocket with the server port, you send it start followed by 16 bit, mono audio streams, followed by stop, it will reply with the words it believed it heard and a confidence value.
+
+*Whisper is currenlty in the VERY early stages and an support is best effort, I will happily accept well thought out pull requests*
+
 
 ###Installing Whisper
 
