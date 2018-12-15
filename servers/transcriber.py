@@ -43,8 +43,8 @@ class transObject:
         # Gotta setup the decoder.
         config = Decoder.default_config()
         config.set_string('-hmm', "model/en-us/en-us")
-        config.set_string('-lm', 'lang_models/vcm3.lm')
-        config.set_string('-dict', 'lang_models/vcm3.dic')
+        config.set_string('-lm', 'lang_models/1238.lm')
+        config.set_string('-dict', 'lang_models/1238.dic')
         config.set_string('-logfn', '/dev/null')
         decoder = Decoder(config)
         # Start decoding file.
