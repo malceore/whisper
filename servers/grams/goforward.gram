@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+grammar goforward;
+
+public <move> = GO;
+public <move1> = <distance>;
+public <move2> = LIGHT <distance>;
+public <move3> = CALIBRATE;
+public <move4> = GO <distance>;
+public <move5> = DOWN <distance>;
+public <move6> = UP <distance>;
+public <move7> = GOOD MORNING;
+public <move8> = GOOD NIGHT;
+
+<distance> = ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT; 

@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+grammar commands;
+
+public <action1> = LIGHT <numbers>+;
+public <action2> = [ GO ] ( DOWN | UP ) <numbers>;
+public <action3> = GOOD ( MORNING | NIGHT );
+public <action4> = BUZZ OFF;
+public <action5> = ( SLEEP | AWAKE );
+public <action6> = SET ALARM [FOUR] [HALF] HOUR;
+public <action7> = SET ALARM [FOUR] <numbers>;
+
+<numbers> = ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT; 

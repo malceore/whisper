@@ -24,12 +24,12 @@ class transObject:
 
     def calibrate(self):
         self.dPrint("Getting average audio intensity..")
-        self.dPrint("Completed Calibation.")   
-    
+        self.dPrint("Completed Calibation.")
+
     def recieve(self, data):
         self.dPrint("Recieved audio clip..")
-        self.data.append(data) 
-        
+        self.data.append(data)
+
     # Later this will write to file and transcribe that then return text.
     def transcribe(self, sampleSize):
         self.dPrint("Transcribed looks like:")
@@ -39,14 +39,26 @@ class transObject:
         os.remove(filename)
         return text
 
+    # Leverage Pocketsphinx to convert saved sound file to text and send back down the pipe.
     def sttPocketsphinx(self, wav_file):
         # Gotta setup the decoder.
         config = Decoder.default_config()
         config.set_string('-hmm', "model/en-us/en-us")
-        config.set_string('-lm', 'lang_models/1238.lm')
+        #config.set_string('-lm', 'lang_models/1238.lm')
         config.set_string('-dict', 'lang_models/1238.dic')
+        config.set_string('-dictcase', 'yes')
+        #config.set_string('-jsgf', 'grams/goforward.gram')
         config.set_string('-logfn', '/dev/null')
         decoder = Decoder(config)
+
+        # Grammar based rules setup.
+        jsgf = Jsgf('grams/commands.gram')
+        rule = jsgf.get_rule('commands.action1')
+        fsg = jsgf.build_fsg(rule, decoder.get_logmath(), 7.5)
+        fsg.writefile('grams/commands.fsg')
+        decoder.set_fsg('commands', fsg)
+        decoder.set_search('commands')
+
         # Start decoding file.
         decoder.start_utt()
         stream = open(wav_file, "rb")
@@ -57,15 +69,21 @@ class transObject:
             else:
                 break
         decoder.end_utt()
+
+        # Write those words to an easy to parse format.
         words = []
-        [words.append(seg.word) for seg in decoder.seg()]
+        #[words.append(seg.word) for seg in decoder.seg()]
+        for seg in decoder.seg():
+            if "NULL" not in seg.word and "sil" not in seg.word:
+                words.append(seg.word)
         if decoder.hyp() != None:
             hypothesis = decoder.hyp()
-            # self.dPrint('Best hypothesis: ', hypothesis.hypstr)
+            #print('Best hypothesis: ' + hypothesis.hypstr)
             words.append(hypothesis.best_score)
         else:
             words.append(0)
-        return words                                                
+
+        return words
 
     def saveSpeech(self, data, sample_size):
         filename = 'output_'+str(int(time.time()))
@@ -77,19 +95,17 @@ class transObject:
         wf.writeframes(data)
         wf.close()
         return filename + '.wav'
-                                     
+
     def start(self):
         self.dPrint("Stub start")
-        
+
     def stop(self):
         self.dPrint("Stub start")
-        
+
 
 if(__name__ == '__main__'):
     test = transObject(1)
     test.debug = True
     print(test.sttPocketsphinx("../tests/test.wav"))
     # test.start()
-    # test.stop()    
-    
-    
+    # test.stop()
