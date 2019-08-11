@@ -9,5 +9,13 @@ public <action4> = BUZZ OFF;
 public <action5> = ( SLEEP | AWAKE );
 public <action6> = SET ALARM [FOUR] [HALF] HOUR;
 public <action7> = SET ALARM [FOUR] <numbers>;
+public <action8> = TV (ON | OFF);
+public <action9> = OPEN <application>;
+public <action10> = VOLUME (UP | DOWN);
+public <action11> = ( MUTE | UNMUTE );
+public <action12> = PLAY MUSIC;
+public <action13> = ( PAUSE | PLAY | STOP );
+public <action14> = CANCEL;
 
+<application> = NETFLIX | YOUTUBE | HULU;
 <numbers> = ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT; 

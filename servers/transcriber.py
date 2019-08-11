@@ -44,20 +44,20 @@ class transObject:
         # Gotta setup the decoder.
         config = Decoder.default_config()
         config.set_string('-hmm', "model/en-us/en-us")
-        #config.set_string('-lm', 'lang_models/1238.lm')
-        config.set_string('-dict', 'lang_models/1238.dic')
+        config.set_string('-lm', 'lang_models/9228.lm')
+        config.set_string('-dict', 'lang_models/9228.dic')
         config.set_string('-dictcase', 'yes')
         #config.set_string('-jsgf', 'grams/goforward.gram')
         config.set_string('-logfn', '/dev/null')
         decoder = Decoder(config)
 
         # Grammar based rules setup.
-        jsgf = Jsgf('grams/commands.gram')
-        rule = jsgf.get_rule('commands.action1')
-        fsg = jsgf.build_fsg(rule, decoder.get_logmath(), 7.5)
-        fsg.writefile('grams/commands.fsg')
-        decoder.set_fsg('commands', fsg)
-        decoder.set_search('commands')
+        #jsgf = Jsgf('grams/commands.gram')
+        #rule = jsgf.get_rule('commands.action1')
+        #fsg = jsgf.build_fsg(rule, decoder.get_logmath(), 7.5)
+        #fsg.writefile('grams/commands.fsg')
+        #decoder.set_fsg('commands', fsg)
+        #decoder.set_search('commands')
 
         # Start decoding file.
         decoder.start_utt()
